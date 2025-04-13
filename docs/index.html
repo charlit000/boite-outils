@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boîte à Outils Admin Sys & Réseaux</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    function copyToClipboard(element) {
+      var text = document.getElementById(element);
+      text.select();
+      document.execCommand("copy");
+      alert("Commande copiée !");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🔧Boîte à Outils Admin Sys & Réseaux </h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="reseau.html">Réseaux</a>
+      <a href="windows.html">Windows Server</a>
+      <a href="scripts.html">Scripts</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="tuto.html">Tuto avancée</a>
+    </nav>
+        <!-- Search Bar -->
+    <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Rechercher une commande...">
+    </div>
+  </header>
+  <main>
+    <h2>Bienvenue sur la boîte à outils administrateur Systèmes et Réseaux !</h2>
+    <p>Choisissez une catégorie dans le menu pour consulter les commandes utiles.</p>
+  </main>
+  <footer>
+    <p>Erwan Z. &copy; 2025 - Projet boîte à outils</p>
+  </footer>
+</body>
+</html>

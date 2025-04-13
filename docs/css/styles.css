@@ -1,0 +1,175 @@
+/* Général */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7; /* Gris clair pour un fond sobre */
+    color: #333; /* Texte sombre pour un bon contraste */
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  h1, h2, h3 {
+    color: #003366; /* Couleur bleue sombre typique pour des entreprises de réseau et systèmes */
+  }
+  
+  a {
+    text-decoration: none;
+    color: #0066cc; /* Bleu clair pour les liens */
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* En-tête */
+  header {
+    background-color: #003366; /* Bleu foncé LDB */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  header nav {
+    margin-top: 10px;
+  }
+  
+  header nav a {
+    margin: 0 15px;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  header nav a:hover {
+    color: #f4f4f4;
+  }
+  
+  /* Contenu principal */
+  main {
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff; /* Fond blanc pour la clarté et la lisibilité */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  section {
+    margin-bottom: 30px;
+  }
+  
+  section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #003366; /* Titre des sections en bleu LDB */
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  ul li {
+    background-color: #f4f4f4; /* Fond gris clair pour chaque item */
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  ul li strong {
+    font-weight: bold;
+    display: block;
+  }
+  
+  ul li code {
+    display: block;
+    background-color: #e8e8e8; /* Code avec fond gris clair */
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', Courier, monospace;
+    word-wrap: break-word;
+    margin-top: 10px;
+  }
+  
+  ul li button {
+    background-color: #28a745; /* Vert pour les boutons */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  ul li button:hover {
+    background-color: #218838;
+  }
+  
+  ul li button:focus {
+    outline: none;
+  }
+  
+  /* Pied de page */
+  footer {
+    text-align: center;
+    margin-top: 50px;
+    font-size: 1rem;
+    color: #777;
+  }
+  
+  /* Résponsivité mobile */
+  @media (max-width: 768px) {
+    header nav {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    header nav a {
+      margin-bottom: 10px;
+    }
+  
+    main {
+      padding: 15px;
+    }
+  }
+  /* Search Bar */
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#search-bar {
+    padding: 10px;
+    font-size: 1rem;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#search-bar:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+  
+  

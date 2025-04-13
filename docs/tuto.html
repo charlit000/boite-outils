@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriels Avancés - Boîte à Outils Admin Sys & Réseaux</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    function copyToClipboard(element) {
+      var text = document.getElementById(element);
+      text.select();
+      document.execCommand("copy");
+      alert("Commande copiée !");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🔧 Boîte à Outils Admin Sys & Réseaux</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="reseau.html">Réseaux</a>
+      <a href="windows.html">Windows Server</a>
+      <a href="scripts.html">Scripts</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="tuto.html">Tuto avancée</a>
+    </nav>
+  </header>
+  <main>
+    <h2>🔧 Tutoriels Avancés</h2>
+    
+    <!-- Tutoriel pour EIGRP -->
+    <section>
+      <h3>Configuration d'EIGRP sur un Routeur Cisco</h3>
+      <p>Voici un guide étape par étape pour configurer le protocole EIGRP (Enhanced Interior Gateway Routing Protocol) sur un routeur Cisco :</p>
+      <ul>
+        <li>
+          <strong>Entrer en mode de configuration globale :</strong><br>
+          <code id="cmd1">enable</code>
+          <button onclick="copyToClipboard('cmd1')">Copier</button>
+        </li>
+        <li>
+          <strong>Accéder à la configuration du routeur :</strong><br>
+          <code id="cmd2">configure terminal</code>
+          <button onclick="copyToClipboard('cmd2')">Copier</button>
+        </li>
+        <li>
+          <strong>Activer EIGRP pour un réseau :</strong><br>
+          <code id="cmd3">router eigrp 1<br>network 192.168.1.0 0.0.0.255</code>
+          <button onclick="copyToClipboard('cmd3')">Copier</button>
+        </li>
+        <li>
+          <strong>Définir une authentification EIGRP (optionnel) :</strong><br>
+          <code id="cmd4">key-chain EIGRP_KEYS<br>key 1<br>key-string cisco123</code>
+          <button onclick="copyToClipboard('cmd4')">Copier</button>
+        </li>
+        <li>
+          <strong>Afficher l'état EIGRP :</strong><br>
+          <code id="cmd5">show ip eigrp neighbors</code>
+          <button onclick="copyToClipboard('cmd5')">Copier</button>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Tutoriel pour HSRP -->
+    <section>
+      <h3>Configuration d'HSRP (Hot Standby Router Protocol)</h3>
+      <p>Voici un guide pour configurer HSRP sur deux routeurs pour assurer une haute disponibilité :</p>
+      <ul>
+        <li>
+          <strong>Accéder à la configuration du routeur :</strong><br>
+          <code id="cmd6">enable<br>configure terminal</code>
+          <button onclick="copyToClipboard('cmd6')">Copier</button>
+        </li>
+        <li>
+          <strong>Configurer l'interface virtuelle HSRP :</strong><br>
+          <code id="cmd7">interface FastEthernet 0/0<br>standby 1 ip 192.168.1.254</code>
+          <button onclick="copyToClipboard('cmd7')">Copier</button>
+        </li>
+        <li>
+          <strong>Définir le priorité de HSRP (optionnel) :</strong><br>
+          <code id="cmd8">standby 1 priority 120</code>
+          <button onclick="copyToClipboard('cmd8')">Copier</button>
+        </li>
+        <li>
+          <strong>Afficher l'état de HSRP :</strong><br>
+          <code id="cmd9">show standby</code>
+          <button onclick="copyToClipboard('cmd9')">Copier</button>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>🧭 Configuration BGP - Cisco (AS interne)</h3>
+      <ul>
+        <li>
+          <strong>Configuration basique d’un routeur BGP :</strong><br>
+          <code id="bgp1">router bgp 65001<br>neighbor 192.168.1.2 remote-as 65002<br>network 10.10.10.0 mask 255.255.255.0</code>
+          <button onclick="copyToClipboard('bgp1')">Copier</button>
+        </li>
+        <li>
+          <strong>Afficher la table BGP :</strong><br>
+          <code id="bgp2">show ip bgp</code>
+          <button onclick="copyToClipboard('bgp2')">Copier</button>
+        </li>
+        <li>
+          <strong>Vérifier les voisins BGP :</strong><br>
+          <code id="bgp3">show ip bgp summary</code>
+          <button onclick="copyToClipboard('bgp3')">Copier</button>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>📶 Inter-VLAN Routing</h3>
+      <ul>
+        <li>
+          <strong>Création des VLANs :</strong><br>
+          <code id="vlan1">vlan 10<br>name Sales<br>exit<br>vlan 20<br>name HR</code>
+          <button onclick="copyToClipboard('vlan1')">Copier</button>
+        </li>
+        <li>
+          <strong>Configurer les interfaces VLAN (Switch L3) :</strong><br>
+          <code id="vlan2">interface vlan 10<br>ip address 192.168.10.1 255.255.255.0<br>no shutdown<br>exit<br>interface vlan 20<br>ip address 192.168.20.1 255.255.255.0<br>no shutdown</code>
+          <button onclick="copyToClipboard('vlan2')">Copier</button>
+        </li>
+        <li>
+          <strong>Activer le routage IP sur le switch :</strong><br>
+          <code id="vlan3">ip routing</code>
+          <button onclick="copyToClipboard('vlan3')">Copier</button>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h3>🔐 VPN Site-à-Site - Cisco</h3>
+      <ul>
+        <li>
+          <strong>Créer une liste d'accès pour le trafic VPN :</strong><br>
+          <code id="vpn1">access-list 100 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0.255</code>
+          <button onclick="copyToClipboard('vpn1')">Copier</button>
+        </li>
+        <li>
+          <strong>Définir la politique ISAKMP (Phase 1) :</strong><br>
+          <code id="vpn2">crypto isakmp policy 10<br>encryption aes<br>hash sha<br>authentication pre-share<br>group 2<br>lifetime 86400</code>
+          <button onclick="copyToClipboard('vpn2')">Copier</button>
+        </li>
+        <li>
+          <strong>Définir la clé partagée et le peer :</strong><br>
+          <code id="vpn3">crypto isakmp key SECRETKEY address 203.0.113.1</code>
+          <button onclick="copyToClipboard('vpn3')">Copier</button>
+        </li>
+        <li>
+          <strong>Configurer la phase 2 (IPSec) :</strong><br>
+          <code id="vpn4">crypto ipsec transform-set TS esp-aes esp-sha-hmac</code>
+          <button onclick="copyToClipboard('vpn4')">Copier</button>
+        </li>
+        <li>
+          <strong>Créer le crypto map :</strong><br>
+          <code id="vpn5">crypto map VPNMAP 10 ipsec-isakmp<br>set peer 203.0.113.1<br>set transform-set TS<br>match address 100</code>
+          <button onclick="copyToClipboard('vpn5')">Copier</button>
+        </li>
+        <li>
+          <strong>Appliquer le crypto map à l’interface :</strong><br>
+          <code id="vpn6">interface GigabitEthernet0/0<br>crypto map VPNMAP</code>
+          <button onclick="copyToClipboard('vpn6')">Copier</button>
+        </li>
+      </ul>
+    </section>
+    
+    
+  </main>
+  <footer>
+    <p>Erwan Z. &copy; 2025 - Projet boîte à outils</p>
+  </footer>
+</body>
+</html>

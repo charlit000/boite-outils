@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sécurité - Boîte à Outils Admin Sys & Réseaux</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    function copyToClipboard(element) {
+      var text = document.getElementById(element);
+      text.select();
+      document.execCommand("copy");
+      alert("Commande copiée !");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🔧 Boîte à Outils Admin Sys & Réseaux</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="reseau.html">Réseaux</a>
+      <a href="windows.html">Windows Server</a>
+      <a href="scripts.html">Scripts</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="tuto.html">Tuto avancée</a>
+    </nav>
+  </header>
+  <main>
+    <h2>🔒 Sécurisation Système</h2>
+    <section>
+      <h3>Commandes de sécurité</h3>
+      <ul>
+        <li>
+          <strong>Désactiver les ports USB via GPO :</strong><br>
+          <code id="cmd1">Disable-USBDevices -Force</code>
+          <button onclick="copyToClipboard('cmd1')">Copier</button>
+        </li>
+        <li>
+          <strong>Configurer un pare-feu Windows :</strong><br>
+          <code id="cmd2">Set-NetFirewallProfile -Enabled True</code>
+          <button onclick="copyToClipboard('cmd2')">Copier</button>
+        </li>
+        <li>
+          <strong>Vérifier les comptes inactifs :</strong><br>
+          <code id="cmd3">Search-ADAccount -AccountInactive -UsersOnly</code>
+          <button onclick="copyToClipboard('cmd3')">Copier</button>
+        </li>
+        <li>
+          <strong>Auditer les connexions RDP :</strong><br>
+          <code id="cmd4">Get-EventLog -LogName Security -InstanceId 4624 | Where-Object {$_.Message -match 'RDP-Tcp'}</code>
+         

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Réseaux - Boîte à Outils Admin Sys & Réseaux</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    function copyToClipboard(element) {
+      var text = document.getElementById(element);
+      text.select();
+      document.execCommand("copy");
+      alert("Commande copiée !");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🔧 Boîte à Outils Admin Sys & Réseaux</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="reseau.html">Réseaux</a>
+      <a href="windows.html">Windows Server</a>
+      <a href="scripts.html">Scripts</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="tuto.html">Tuto avancée</a>
+    </nav>
+  </header>
+  <main>
+    <h2>🔧 Commandes Réseaux</h2>
+    <section>
+      <h3>Cisco - Commandes de configuration réseau</h3>
+      <ul>
+        <li>
+          <strong>Afficher la configuration en cours :</strong><br>
+          <code id="cmd1">show running-config</code>
+          <button onclick="copyToClipboard('cmd1')">Copier</button>
+        </li>
+        <li>
+          <strong>Sauvegarder la configuration :</strong><br>
+          <code id="cmd2">copy running-config startup-config</code>
+          <button onclick="copyToClipboard('cmd2')">Copier</button>
+        </li>
+        <li>
+          <strong>Créer un VLAN de management :</strong><br>
+          <code id="cmd3">vlan 99<br>name Management<br>exit<br>interface vlan 99<br>ip address 192.168.99.1 255.255.255.0<br>no shutdown</code>
+          <button onclick="copyToClipboard('cmd3')">Copier</button>
+        </li>
+        <li>
+          <strong>Configurer un trunk :</strong><br>
+          <code id="cmd4">interface FastEthernet0/24<br>switchport mode trunk</code>
+          <button onclick="copyToClipboard('cmd4')">Copier</button>
+        </li>
+        <li>
+          <strong>Afficher les interfaces :</strong><br>
+          <code id="cmd5">show ip interface brief</code>
+          <button onclick="copyToClipboard('cmd5')">Copier</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>Erwan Z. &copy; 2025 - Projet boîte à outils</p>
+  </footer>
+</body>
+</html>

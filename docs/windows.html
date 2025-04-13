@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Windows Server - Boîte à Outils Admin Sys & Réseaux</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script>
+    function copyToClipboard(element) {
+      var text = document.getElementById(element);
+      text.select();
+      document.execCommand("copy");
+      alert("Commande copiée !");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>🔧 Boîte à Outils Admin Sys & Réseaux</h1>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="reseau.html">Réseaux</a>
+      <a href="windows.html">Windows Server</a>
+      <a href="scripts.html">Scripts</a>
+      <a href="securite.html">Sécurité</a>
+      <a href="diagnostic.html">Diagnostic</a>
+      <a href="tuto.html">Tuto avancée</a>
+    </nav>
+  </header>
+  <main>
+    <h2>🖥️ Commandes Windows Server</h2>
+    <section>
+      <h3>Active Directory - Commandes administratives</h3>
+      <ul>
+        <li>
+          <strong>Créer un domaine :</strong><br>
+          <code id="cmd1">New-ADDomain -Name "mondomaine.com" -DomainNetbiosName "MONDOMAINE" -ForestMode "Win2016"</code>
+          <button onclick="copyToClipboard('cmd1')">Copier</button>
+        </li>
+        <li>
+          <strong>Créer un OU :</strong><br>
+          <code id="cmd2">New-ADOrganizationalUnit -Name "HR" -Path "DC=mondomaine,DC=com"</code>
+          <button onclick="copyToClipboard('cmd2')">Copier</button>
+        </li>
+        <li>
+          <strong>Créer une GPO :</strong><br>
+          <code id="cmd3">New-GPO -Name "GPO_Sécurisée"</code>
+          <button onclick="copyToClipboard('cmd3')">Copier</button>
+        </li>
+        <li>
+          <strong>Créer une étendue DHCP :</strong><br>
+          <code id="cmd4">Add-DhcpServerv4Scope -Name "Scope1" -StartRange 192.168.1.100 -EndRange 192.168.1.200 -SubnetMask 255.255.255.0</code>
+          <button onclick="copyToClipboard('cmd4')">Copier</button>
+        </li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>Erwan Z. &copy; 2025 - Projet boîte à outils</p>
+  </footer>
+</body>
+</html>
